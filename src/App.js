@@ -1,6 +1,7 @@
 import './styles/styles.css';
 import Home from './views/home';
 import NotFound from './views/notfound';
+import ScrollToTop from './scripts/scrollToTop';
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <AppContext.Provider value={{ random, setRandom }}>
+      <ScrollToTop />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='*' element={<NotFound />} />
